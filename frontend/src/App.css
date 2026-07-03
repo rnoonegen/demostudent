@@ -1,0 +1,568 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.brand-icon { font-size: 1.75rem; }
+
+.brand strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+}
+
+.brand small {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.75rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.7);
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.nav-link.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.role-switcher {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.role-switcher label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.35rem;
+}
+
+.role-switcher select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  overflow-y: auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+}
+
+.page-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-light);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.card-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.dashboard-grid,
+.profile-grid,
+.reports-grid,
+.portfolio-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.dashboard-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.reports-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.portfolio-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  margin-top: 1.25rem;
+}
+
+.growth-overview { grid-row: span 2; }
+
+.philosophy-card {
+  grid-column: span 2;
+}
+
+.philosophy-card blockquote {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  color: var(--accent-dark);
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.module-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.module-list li {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.growth-bar {
+  margin-bottom: 1rem;
+}
+
+.growth-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.growth-bar-value {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.growth-bar-track {
+  height: 8px;
+  background: var(--bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.growth-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.student-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.student-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.student-list-item:last-child { border-bottom: none; }
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.student-name { flex: 1; font-weight: 500; }
+
+.student-score {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.check-list,
+.highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.check-list li,
+.highlight-list li {
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.badge-strong, .badge-excellent { background: #e8f2eb; color: #3a6347; }
+.badge-good, .badge-improving, .badge-proficient { background: #eef4fb; color: #4a6a8a; }
+.badge-developing { background: #fdf3e8; color: #9a6b3a; }
+
+.star-rating .star {
+  color: var(--border);
+  font-size: 1.1rem;
+}
+
+.star-rating .star.filled { color: var(--warm); }
+
+.personal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.teacher-note {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.notes-card { grid-column: span 2; }
+
+.assess-prompt-card .btn { margin-top: 0.5rem; }
+
+.portfolio-preview {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.link-more { font-size: 0.9rem; }
+
+.trait-row {
+  display: grid;
+  grid-template-columns: 180px 140px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.trait-label { font-weight: 500; font-size: 0.9rem; }
+
+.trait-row select,
+.trait-row input {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.assessment-category { margin-bottom: 1.25rem; }
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.form-error { color: #c0392b; }
+.success-msg { color: var(--accent); font-weight: 500; }
+.hint { color: var(--text-muted); font-size: 0.85rem; }
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.timeline {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  color: var(--accent-dark);
+  margin: 0;
+}
+
+.portfolio-item {
+  text-align: center;
+}
+
+.portfolio-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+
+.portfolio-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.insight-card { max-width: 560px; }
+
+.insight-metrics { margin-bottom: 1.5rem; }
+
+.insight-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.trend { font-weight: 700; font-size: 1.2rem; }
+.trend-up { color: var(--accent); }
+.trend-down { color: #c0392b; }
+.trend-flat { color: var(--text-muted); }
+
+.insight-label {
+  text-transform: capitalize;
+  color: var(--text-muted);
+}
+
+.suggestion-box {
+  background: var(--accent-light);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+}
+
+.suggestion-box h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-dark);
+  margin-bottom: 0.35rem;
+}
+
+.suggestion-box p { margin: 0; }
+
+.focus-text {
+  font-size: 1.05rem;
+  color: var(--accent-dark);
+  font-weight: 500;
+  margin: 0;
+}
+
+.loading-state,
+.error-state {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.error-state { color: #c0392b; }
+
+.badge-beginner { background: #fdecea; color: #922b21; }
+.badge-advanced { background: #e8f2eb; color: #2d5a3d; }
+
+.personality-skills-card,
+.skills-framework-card { grid-column: 1 / -1; }
+
+.skills-table-wrap {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.skills-table th,
+.skills-table td {
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.skills-table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.skill-area { font-weight: 500; min-width: 140px; }
+.skill-meaning { color: var(--text-muted); min-width: 180px; }
+.skill-observed { color: var(--text-muted); min-width: 180px; }
+.skill-examples { color: var(--text-muted); font-size: 0.85rem; min-width: 200px; }
+
+.personality-assessment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.personality-skill-row {
+  display: grid;
+  grid-template-columns: 1fr 140px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.personality-skill-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.personality-skill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.personality-skill-info strong { font-size: 0.95rem; }
+
+.personality-skill-info .skill-meaning {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.personality-skill-info .skill-observed {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.personality-skill-info .skill-examples {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.personality-skill-row select,
+.personality-skill-row input {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .app-shell { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .philosophy-card { grid-column: span 1; }
+  .growth-overview { grid-row: span 1; }
+  .trait-row { grid-template-columns: 1fr; }
+  .personality-skill-row { grid-template-columns: 1fr; }
+  .personality-skills-card,
+  .skills-framework-card { grid-column: span 1; }
+  .main-content { padding: 1.25rem; }
+}
